@@ -14,6 +14,8 @@ cloak = putOnInvisibleCloak(wantToHide)  # now cloak is a zero-width string
 someSlogan = "Stat do not lie but I."
 stringForCopy = someSlogan + cloak
 
-reveal = takeOffInvisibleCloak(stringForCopy)  # now reveal should equal to wantToHide
+reveal = takeOffInvisibleCloak(stringForCopy[len(someSlogan):])  # now reveal should equal to wantToHide
 ```
+You can use more complex way to generate stringForCopy, but test it first.  
+The print out of someSlogan and stringForCopy should have the same look for human, at least.  
 note that if any char of what you want to hide is special, may have to modify zeroPadding() and binaryToChar().
